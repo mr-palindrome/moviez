@@ -32,5 +32,4 @@ class LoginUserSerializer(TokenObtainPairSerializer):
         user = authenticate(username=username, password=password)
         if not user:
             raise serializers.ValidationError("No active account found with the given credentials")
-        self.user = user
         return super().validate(attrs)

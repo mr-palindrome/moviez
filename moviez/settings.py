@@ -29,6 +29,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+MOVIE_API_URL = config('MOVIE_API_URL')
 
 # Application definition
 
@@ -60,7 +61,7 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'moviez.urls'
 
 SIMPLE_JWT = {
-    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=5),
+    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=60),
     "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
 
     "ALGORITHM": "HS256",
@@ -69,7 +70,7 @@ SIMPLE_JWT = {
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework_simplejwt.authentication.JWTStatelessUserAuthentication',
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
     )
 }
 
