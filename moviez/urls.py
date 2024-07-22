@@ -21,4 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('authentication.urls')),
     path('', include('collection.urls')),
+    path('request-count/', include('management.urls')),
 ]
